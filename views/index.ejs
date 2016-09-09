@@ -1,5 +1,55 @@
-extends layout
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Stylesheets~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/owl.transitions.css"/>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/animate.css"/>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css"/>
 
-block content
-  h1= title
-  p Welcome to #{title}
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Scripts~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<script type="text/javascript" src="/javascripts/jquery.js"></script>
+	<script type="text/javascript" src="/javascripts/bootstrap.min.css.js"></script>
+	<script type="text/javascript" src="/javascripts/wow.js"></script>
+	
+</head>
+<body>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Navigation Bar ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<header>
+		<div class="container">
+			<nav class="pull-left">
+				<ul class="list-unstyled">
+					<li class="animated wow fadeInLeft" data-wow-delay="0s"><a href="#NLwest">NL WEST</a></li>
+					<li class="animated wow fadeInLeft" data-wow-delay=".1s"><a href="#NLcentral">NL CENTRAL</a></li>
+					<li class="animated wow fadeInLeft" data-wow-delay=".2s"><a href="#NLeast">NL EAST</a></li>
+					<li class="animated wow fadeInLeft" data-wow-delay=".3s"><a href="#ALwest">AL WEST</a></li>
+					<li class="animated wow fadeInLeft" data-wow-delay=".4s"><a href="#ALcentral">AL CENTRAL</a></li>
+					<li class="animated wow fadeInLeft" data-wow-delay=".5s"><a href="#ALeast">AL EAST</a></li>
+				</ul>
+			</nav>
+			<div class="standings pull-right">
+				<ul class="list-unstyled">
+					<li class="animated wow fadeInRight" data-wow-delay=".7s"><a href="#Standings" target="_blank">OVERALL STANDINGS</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<div id="title">
+		Is this team playoff bound?
+	</div>
+	<div id="logo">
+		<img src="/images/<%= imageToRender %>">
+	</div>
+	<div id="button-wrapper">
+		<div id="button-form">
+			<form id="true" type="button" action="electric" method="post">
+				<input type="hidden" name="image" value="<%= imageToRender %>">
+				<input id="yes" type="submit" name="submit" class="btn btn-lg btn-success" value="Yes">
+				<input id="no" type="submit" name="submit" class="btn btn-lg btn-danger" value="No">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
